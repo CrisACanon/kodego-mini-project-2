@@ -1,0 +1,15 @@
+.content {
+  width: 60%;
+  margin: auto;
+  padding: 10px;
+}
+
+.content p {
+  font-size: large;
+}
+
+.about-title {
+  font-weight: bold;
+  font-style: italic;
+  color: rgb(30, 114, 30);
+}

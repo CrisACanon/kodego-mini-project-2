@@ -1,0 +1,15 @@
+.p-card {
+  height: 100% !important;
+}
+.p-card .img {
+  height: 250px;
+  width: 100%;
+}
+.p-card .prod-cardbody {
+  display: flex;
+  flex-direction: column;
+}
+
+.p-card .prod-cardbody button {
+  margin-top: auto;
+}
