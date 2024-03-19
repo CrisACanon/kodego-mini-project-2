@@ -6,16 +6,22 @@ import http from "../http";
 import React, { useEffect, useState } from "react";
 import "./Brands.css";
 
-function getBrands() {
+function Brands() {
   const api = http();
   const address = import.meta.env.VITE_API;
   const [brands, setBrands] = useState([]);
+
   useEffect(() => {
+    getBrands();
+    return () => {};
+  }, []);
+
+  function getBrands() {
     api
       .get("/brands")
       .then((res) => setBrands(res.data))
       .catch((err) => console.log(err));
-  }, []);
+  }
 
   return (
     <>
@@ -42,4 +48,4 @@ function getBrands() {
   );
 }
 
-export default getBrands;
+export default Brands;

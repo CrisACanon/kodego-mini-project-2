@@ -12,16 +12,6 @@
   width: 100%;
 }
 
-.box {
-  background-color: rgb(251, 253, 251);
-  height: 200px;
-  width: 150px;
-}
-
-.box img {
-  height: 170px;
-  width: 100%;
-}
 /*
 .overlay {
   position: absolute;
@@ -31,6 +21,19 @@
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }*/
+
+.box {
+  height: 200px;
+  width: 150px;
+}
+
+.box img {
+  height: 200px;
+  width: 90%;
+  object-fit: fill;
+  margin: auto;
+}
+
 .box h3 {
   text-align: center;
   color: black;
@@ -53,10 +56,20 @@
   height: 100% !important;
 }
 
+.service-card .service-cardbody {
+  display: flex;
+  flex-direction: column;
+}
+
 .service-card .img {
   height: 300px;
   width: 100%;
 }
+
+.service-card button {
+  margin-top: auto;
+}
+
 .process {
   height: 100%;
   background-color: #36486b !important;

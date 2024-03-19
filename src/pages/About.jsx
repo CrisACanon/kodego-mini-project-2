@@ -3,9 +3,9 @@ import "./About.css";
 
 function About() {
   return (
-    <section class="p-5">
+    <section className="p-5">
       <h1 className="text-center mb-5">Our Humble Story</h1>
-      <div class="content">
+      <div className="content">
         <h1 className="about-title mb-4">Where We Started</h1>
         <p>
           CAÑON IT SOLUTION is a computer retail business founded on the values
@@ -19,7 +19,7 @@ function About() {
           selling brand new products at accessible prices.
         </p>
         <h1 className="about-title mb-4">Where We’re Going</h1>
-        <p class="mb-5 ">
+        <p className="mb-5 ">
           Today, as we serve you online and in-store, our dedication to growth
           also extends to each and every customer. We strive to provide
           solutions, reliable services, and affordable but quality technologies
@@ -28,17 +28,17 @@ function About() {
           our number one goal.
         </p>
         <h1 className="about-title mb-4">Mission</h1>
-        <p class="mb-5 ">
+        <p className="mb-5 ">
           To uplift Filipino lives through easy technology access.
         </p>
 
         <h1 className="about-title mb-4">Vision</h1>
-        <p class="mb-5 ">
+        <p className="mb-5 ">
           Usher Filipinos into a future where digital and physical experience
           fuse together to deliver customer reach and value.
         </p>
         <h1 className="about-title mb-4">Values</h1>
-        <p class="mb-5 ">
+        <p className="mb-5 ">
           - Humility that drives innovation <br />
           - Passion to pursue excellence <br />
           - Unwavering integrity <br />

@@ -3,6 +3,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -75,6 +77,10 @@ function Home() {
       .catch((err) => console.log(err));
   }, []);
 
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <>
       <Carousel>
@@ -137,7 +143,9 @@ function Home() {
                       />
                       <Card.Body className="service-cardbody">
                         <Card.Title>{service.service_title}</Card.Title>
-                        <Card.Text>{service.service_description}</Card.Text>
+                        <Card.Text className="service-des">
+                          {service.service_description}
+                        </Card.Text>
                       </Card.Body>
                     </Card>
                   </Col>

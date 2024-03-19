@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import Card from "react-bootstrap/Card";
 import http from "../http";
 import { useEffect, useState } from "react";
@@ -11,11 +12,12 @@ import "./Products.css";
 function Products() {
   const api = http();
   const address = import.meta.env.VITE_API;
+  const [data, setData] = useState([]);
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState("0");
   const [producttype, setProductType] = useState([]);
-  const [prodtype, serProdType] = useState("0");
+  const [prodtype, setProdType] = useState("0");
   const [filteredproducttype, setFilteredProductType] = useState([]);
 
   useEffect(() => {
@@ -38,35 +40,56 @@ function Products() {
     return () => {};
   }, [prodtype]);
 
-  async function getCategory() {
-    const { data } = await api.get("/category");
-    setCategories(data);
-  }
-  async function geProductType() {
-    const { data } = await api.get("/product_type");
-
-    setProductType(data);
+  function getCategory() {
+    api
+      .get("/category")
+      .then((res) => setCategories(res.data))
+      .catch((err) => console.log(err));
   }
 
-  async function getProducts() {
+  function geProductType() {
+    api
+      .get("/product_type")
+      .then((res) => setProductType(res.data))
+      .catch((err) => console.log(err));
+  }
+
+  function getProducts() {
     let config = {
       url: "/shops",
       params: {},
     };
     if (category !== "0") config.params.category = category;
     if (prodtype !== "0") config.params.product_type = prodtype;
-
-    const { data } = await api.request(config);
-    setProducts(data);
+    api
+      .request(config)
+      .then((res) => {
+        setProducts(res.data);
+        setData(res.data);
+      })
+      .catch((err) => console.log(err));
   }
+
+  const Filter = (event) => {
+    setProducts(
+      data.filter((f) => f.title.toLowerCase().includes(event.target.value))
+    );
+  };
 
   return (
     <Container>
       <Row className="mt-3">
         <Col sm="12" md="3">
           <Form>
+            <Form.Control
+              defaultValue=""
+              className="mb-4"
+              placeholder="Search"
+              onChange={Filter}
+            ></Form.Control>
+
             <Form.Select
-              defaultValue="0"
+              defaultValue=""
               className="mb-4"
               onChange={(e) => setCategory(e.target.value)}
             >
@@ -85,7 +108,7 @@ function Products() {
               defaultValue="0"
               className="mb-4"
               disabled={category === "0"}
-              onChange={(e) => serProdType(e.target.value)}
+              onChange={(e) => setProdType(e.target.value)}
             >
               <option value="0" disabled>
                 Select Product Type
@@ -120,6 +143,7 @@ function Products() {
                         Product Type: {product.product_type}
                       </Card.Text>
                       <Card.Text>Price: Php {product.price}</Card.Text>
+
                       <Button variant="primary">Add to Cart</Button>
                     </Card.Body>
                   </Card>

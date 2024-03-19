@@ -9,31 +9,31 @@ const routes = [
     name: "Home",
     path: "/",
     element: <Home />,
-    forNavbar: "True",
+    forNavbar: true,
   },
   {
     name: "About",
     path: "/about",
     element: <About />,
-    forNavbar: "True",
+    forNavbar: true,
   },
   {
     name: "Contact Us",
     path: "/contact-us",
     element: <Contact />,
-    forNavbar: "True",
+    forNavbar: true,
   },
   {
     name: "Products",
     path: "/products",
     element: <Products />,
-    forNavbar: "True",
+    forNavbar: true,
   },
   {
     name: "Brands",
     path: "/brands",
     element: <Brands />,
-    forNavbar: "True",
+    forNavbar: true,
   },
 ];
 
