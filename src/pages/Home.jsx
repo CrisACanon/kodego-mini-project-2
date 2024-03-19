@@ -116,7 +116,7 @@ function Home() {
       <div className="process">
         <div className="details">
           <div className="text-center mb-5">
-            <p className="title">THE PROCESS...</p>
+            <p className="title">THE PROCESS....</p>
             <h6>
               Here at Canon I.T. Solution we go through a vigorous process to
               ensure that every custom pc is built to the highest quality. As
