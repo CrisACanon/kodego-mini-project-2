@@ -15,7 +15,7 @@ function Brands() {
     getBrands();
     return () => {};
   }, []);
-
+  
   function getBrands() {
     api
       .get("/brands")

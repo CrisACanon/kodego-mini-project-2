@@ -1,14 +1,14 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Image1 from "../assets/Footer-Background-Image.png";
+import "./Footer.css";
 
 function Footer() {
   return (
     <footer>
       <div className="bg-dark">
         <div className="container">
-          <div className="row py-5 text-white">
-            <div className="col-md-3 col-sm-12">
+          <div className="menu row py-5 text-white">
+            <div className="col-md-3 col-sm-12 ">
               <h4>CUSTOMER SERVICE</h4>
               <p>Cancellation Policy</p>
               <p>Delivery</p>
@@ -16,8 +16,8 @@ function Footer() {
               <p>Payment FAQs</p>
               <p>Return and Refunds</p>
               <p>Service Area Directory</p>
-              <p>erms and Condition</p>
-              <p>Parranty Information</p>
+              <p>Terms and Condition</p>
+              <p>Warranty Information</p>
               <p>Warranty Policy</p>
             </div>
             <div className="col-md-3 col-sm-12">
@@ -44,6 +44,9 @@ function Footer() {
               <p>Tel: 083-123-456</p>
             </div>
           </div>
+        </div>
+        <div className="text-white text-center">
+          © 2021 Copyright: E-Commerce Website - Powered By: Cris Canon
         </div>
       </div>
     </footer>

@@ -18,13 +18,7 @@ const routes = [
     forNavbar: true,
   },
   {
-    name: "Contact Us",
-    path: "/contact-us",
-    element: <Contact />,
-    forNavbar: true,
-  },
-  {
-    name: "Products",
+    name: "Shop",
     path: "/products",
     element: <Products />,
     forNavbar: true,
@@ -33,6 +27,12 @@ const routes = [
     name: "Brands",
     path: "/brands",
     element: <Brands />,
+    forNavbar: true,
+  },
+  {
+    name: "Contact Us",
+    path: "/contact-us",
+    element: <Contact />,
     forNavbar: true,
   },
 ];

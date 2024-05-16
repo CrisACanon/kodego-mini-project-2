@@ -1,7 +1,9 @@
 .brand-card {
   height: 100%;
+  width: 100%;
 }
 .brand-card .img {
+  object-fit: fill;
   height: 100px;
   width: 100%;
 }
