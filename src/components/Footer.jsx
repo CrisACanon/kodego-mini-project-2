@@ -46,7 +46,7 @@ function Footer() {
           </div>
         </div>
         <div className="text-white text-center">
-          © 2021 Copyright: E-Commerce Website - Powered By: Cris Canon
+          © 2024 Copyright: E-Commerce Website - Powered By: Cris Cañon
         </div>
       </div>
     </footer>
